@@ -1,0 +1,132 @@
+#+OPTIONS: H:3 num:2
+
+* Emacs相关中文问题以及解决方案
+
+本文力图收集整理 Emacs 使用过程中的中文相关问题以及解决方案. 欢迎 issue 或者其他方式补充问题, 修正或者增加解决方案.
+
+changelog:
+
+- 2015-06-15 构思好基本结构, 通过 QQ 群/微信群 收集整理, 逐步完善中.
+
+** Emacs 中使用中文的基础
+
+*** Emacs 的各种字符集问题
+
+各种字符集以及不同平台的格式相关问题.
+
+*** 文件编码
+
+自动检测和修改编码等.
+
+*** 中文字体设置
+
+包括推荐的字体等.
+
+** 中文输入
+
+*** 外部中文输入法
+
+个人用搜狗中文输入法的还可以
+
+*** 内置的输入法
+
+默认情况下 toggle-input-method 命令切换输入法.
+
+*** 输入法相关 mode
+
+- https://github.com/danking/eim-py
+  eim-py: An Emacs Input Method extension for smart pinyin
+
+- https://github.com/gongzhitaao/chinese-wubi
+  Emacs 中使用五笔输入法: Chinese Wubi (五笔) input method for Emacs based on quail package.
+
+
+- chinese-pyim  https://github.com/tumashu/chinese-pyim
+  chinese-pyim是从eim拼音输入法进化来的，个人感觉比eim拼音输入法好用
+
+- https://github.com/cute-jumper/fcitx.el
+  Make fcitx better in Emacs.
+
+- https://github.com/tumashu/chinese-remote-input
+  chinese-remote-input
+  在emacs中，通过智能手机输入法（比如：android语音输入法）远程输入中文。
+
+** org 的中文问题
+
+*** table 中英文对齐等
+
+这个就有好几个方案
+
+*** 导出中文 pdf
+
+导出中文也分直接转 LaTex 再转 pdf 以及先转 html 再转 pdf 等各种方式.
+
+
+** 其他中文相关工具类
+
+这里的篇幅足够长的时候, 提升为一级条目.
+
+*** pinyin-search
+
+https://github.com/xuchunyang/pinyin-search.el
+
+Search Chinese by the first letter of Chinese pinyin.
+
+*** ace-pinyin
+
+https://github.com/cute-jumper/ace-pinyin
+
+Jump to Chinese characters using ace-jump-char-mode or avy-goto-char :
+input the first letter of the pinyin of the Chinese character, then use
+ace-jump-char-mode or avy-goto-char to jump to it.
+
+*** find-by-pinyin-dired
+
+https://github.com/redguardtoo/find-by-pinyin-dired
+
+Find file by first Pinyin characters of Chinese Hanzi. 输入拼音首字母定位对应的中文目录/文件
+
+*** emacs-hz2py
+
+https://github.com/kawabata/emacs-hz2py
+
+Hanzi to Pinyin converter for Emacs
+
+
+*** pyim-hanzi2pinyin
+
+是一个汉字转拼音得函数，包含在chinese-pyim中，主要用于生成词库 @tushuma 天然二呆
+
+*** ido-pinyin
+
+https://github.com/pengpengxp/ido-pinyin
+
+Make ido support chinese pinyin 2015-06-14: 新生不久, 可能问题还比较多 :)
+
+*** chinese-fonts-setup
+
+https://github.com/tumashu/chinese-fonts-setup
+
+emacs中文字体配置工具。可以快速方便的的实现中文字体和英文字体等宽（也就是常说的中英文对齐）
+
+*** chinese-pyim-bigdict
+
+https://github.com/tumashu/chinese-pyim-bigdict
+
+这个文件是一个 Chinese-pyim 拼音词库文件，词量超过100万，词库大于20M，这个词库仅供个人使用。
+
+*** Chinese in Spacemacs
+
+https://github.com/et2010/Chinese
+
+Spacemacs configuration layer for easy writing in Chinese
+
+*** 欢迎补充
+
+
+** 鸣谢
+
+本文档由 hick 出事整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候,
+发现有各种做法, 引发整理中文问题的想法.
+
+欢迎提议和补充条目.
