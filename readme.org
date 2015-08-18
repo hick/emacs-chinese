@@ -48,6 +48,19 @@ changelog:
 
 自动检测和修改编码等.
 
+默认配置下, mode line 最左会显示当前文件编码以及换行符格式, 比如 U(Unix) 标示 UTF-8 编码, UNIX 格式换行符,
+鼠标点击可以查看更多详情.
+
+- revert-buffer-with-coding-system
+
+  重新选择编码方式载入当前文件, 不会转换原文件编码.
+
+- set-buffer-file-coding-system
+
+  转换当前 buffer(打开文件) 的编码.
+
+另外还有不太常用的 `describe-current-coding-system` 可以查看 Emacs 的编码设置情况.
+
 *** 中文字体设置
 
 包括推荐的字体等.
@@ -149,14 +162,20 @@ Here is how to display the ‘celestial-stem’ (天干) and the ‘terrestrial-
 
 这个就有好几个方案
 
-*** 导出中文 pdf
+*** org 以及 LaTex 等到处中文 pdf
 
 导出中文也分直接转 LaTex 再转 pdf 以及先转 html 再转 pdf 等各种方式.
+
+arthur@微信群 http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf
 
 
 ** 其他中文相关工具
 
 这里的篇幅足够长的时候, 提升为一级条目.
+
+*** magit 的中文问题
+
+
 
 *** pinyin-search
 
@@ -227,9 +246,15 @@ https://github.com/tumashu/chinese-pyim-bigdict
 
 *** Chinese in Spacemacs
 
+- [2015-06-16 15:21:58] 最新消息, 子龙山人给 Spacemacs 贡献了一个中文 layer , 已经提交 pull request:
+  https://github.com/syl20bnr/spacemacs/pull/2024 , 这是使用说明：
+  https://github.com/andyque/spacemacs/blob/add-chinese-layer/contrib/chinese/README.org
+
+
 https://github.com/et2010/Chinese
 
 Spacemacs configuration layer for easy writing in Chinese
+
 
 *** Emacs cedict
 
