@@ -10,33 +10,34 @@ changelog:
 
 ** 目录        :TOC_3_gh:
  - [[#emacs相关中文问题以及解决方案][Emacs相关中文问题以及解决方案]]
-     - [[#emacs-中使用中文的基础][Emacs 中使用中文的基础]]
-         - [[#emacs-的各种字符集问题][Emacs 的各种字符集问题]]
-         - [[#文件编码][文件编码]]
-         - [[#中文字体设置][中文字体设置]]
-         - [[#日历设置][日历设置]]
-     - [[#中文输入][中文输入]]
-         - [[#外部中文输入法][外部中文输入法]]
-         - [[#内置的输入法][内置的输入法]]
-         - [[#输入法相关-mode][输入法相关 mode]]
-     - [[#org-的中文问题][org 的中文问题]]
-         - [[#table-中英文对齐等][table 中英文对齐等]]
-         - [[#导出中文-pdf][导出中文 pdf]]
-     - [[#其他中文相关工具][其他中文相关工具]]
-         - [[#pinyin-search][pinyin-search]]
-         - [[#ace-pinyin][ace-pinyin]]
-         - [[#find-by-pinyin-dired][find-by-pinyin-dired]]
-         - [[#emacs-hz2py][emacs-hz2py]]
-         - [[#pyim-hanzi2pinyin][pyim-hanzi2pinyin]]
-         - [[#ido-pinyin][ido-pinyin]]
-         - [[#pangu-spacing][pangu-spacing]]
-         - [[#chinese-word-at-point][chinese-word-at-point]]
-         - [[#chinese-fonts-setup][chinese-fonts-setup]]
-         - [[#chinese-pyim-bigdict][chinese-pyim-bigdict]]
-         - [[#chinese-in-spacemacs][Chinese in Spacemacs]]
-         - [[#emacs-cedict][Emacs cedict]]
-         - [[#欢迎补充][欢迎补充]]
-     - [[#参考和鸣谢][参考和鸣谢]]
+   - [[#emacs-中使用中文的基础][Emacs 中使用中文的基础]]
+     - [[#emacs-的各种字符集问题][Emacs 的各种字符集问题]]
+     - [[#文件编码][文件编码]]
+     - [[#中文字体设置][中文字体设置]]
+     - [[#日历设置][日历设置]]
+   - [[#中文输入][中文输入]]
+     - [[#外部中文输入法][外部中文输入法]]
+     - [[#内置的输入法][内置的输入法]]
+     - [[#输入法相关-mode][输入法相关 mode]]
+   - [[#org-的中文问题][org 的中文问题]]
+     - [[#table-中英文对齐等][table 中英文对齐等]]
+     - [[#org-以及-latex-等到处中文-pdf][org 以及 LaTex 等到处中文 pdf]]
+   - [[#其他中文相关工具][其他中文相关工具]]
+     - [[#magit-的中文问题][magit 的中文问题]]
+     - [[#pinyin-search][pinyin-search]]
+     - [[#ace-pinyin][ace-pinyin]]
+     - [[#find-by-pinyin-dired][find-by-pinyin-dired]]
+     - [[#emacs-hz2py][emacs-hz2py]]
+     - [[#pyim-hanzi2pinyin][pyim-hanzi2pinyin]]
+     - [[#ido-pinyin][ido-pinyin]]
+     - [[#pangu-spacing][pangu-spacing]]
+     - [[#chinese-word-at-point][chinese-word-at-point]]
+     - [[#chinese-fonts-setup][chinese-fonts-setup]]
+     - [[#chinese-pyim-bigdict][chinese-pyim-bigdict]]
+     - [[#chinese-in-spacemacs][Chinese in Spacemacs]]
+     - [[#emacs-cedict][Emacs cedict]]
+     - [[#欢迎补充][欢迎补充]]
+   - [[#参考和鸣谢][参考和鸣谢]]
 
 ** Emacs 中使用中文的基础
 
@@ -160,7 +161,15 @@ Here is how to display the ‘celestial-stem’ (天干) and the ‘terrestrial-
 
 *** table 中英文对齐等
 
-这个就有好几个方案
+因为 Emacs 处理字体的方式的问题, 即使设置字体为等宽字体(一个中文相当于两个英文宽度), org 中的 table 出现中文经常都无法工整的对齐.
+需要分别对中英文字体设置合适的大小. 处理该问题有现成的方案: https://github.com/tumashu/chinese-fonts-setup . 其中默认定义了各个
+系统平台常见的字体以及中英文字体搭配, 使得 org table 里的出现中文也能很好的对齐. 如果安装好以后显示的字体过大, 可以通过
+cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
+
+更多参考资料:
+
+- 狠狠地折腾了一把Emacs中文字体 BY  BAO HAOJUN http://baohaojun.github.io/perfect-emacs-chinese-font.html
+- 折腾 Emacs BY zhuoqiang http://zhuoqiang.me/torture-emacs.html
 
 *** org 以及 LaTex 等到处中文 pdf
 
