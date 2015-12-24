@@ -47,10 +47,10 @@ changelog:
 
 *** 文件编码
 
-自动检测和修改编码等.
+默认配置下, mode line 最左会显示当前文件编码以及换行符格式, 比如 U(Unix) 标示 UTF-8 编码, UNIX 格式换行符,鼠标点击可以查看更多详情.
 
-默认配置下, mode line 最左会显示当前文件编码以及换行符格式, 比如 U(Unix) 标示 UTF-8 编码, UNIX 格式换行符,
-鼠标点击可以查看更多详情.
+Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码的 mode ,  有看到反馈说有时候不能成功检测: Unicad is short for Universal Charset Auto Detector. It is an Emacs-Lisp port of Mozilla Universal Charset Detector.
+
 
 - revert-buffer-with-coding-system
 
@@ -61,6 +61,7 @@ changelog:
   转换当前 buffer(打开文件) 的编码.
 
 另外还有不太常用的 `describe-current-coding-system` 可以查看 Emacs 的编码设置情况.
+
 
 *** 中文字体设置
 
