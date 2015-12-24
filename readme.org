@@ -11,7 +11,8 @@ changelog:
 ** 目录        :TOC_3_gh:
  - [[#emacs相关中文问题以及解决方案][Emacs相关中文问题以及解决方案]]
    - [[#emacs-中使用中文的基础][Emacs 中使用中文的基础]]
-     - [[#emacs-的各种字符集问题][Emacs 的各种字符集问题]]
+     - [[#emacs-的各种字符集][Emacs 的各种字符集]]
+     - [[#中文断行][中文断行]]
      - [[#文件编码][文件编码]]
      - [[#中文字体设置][中文字体设置]]
      - [[#日历设置][日历设置]]
@@ -21,6 +22,7 @@ changelog:
      - [[#输入法相关-mode][输入法相关 mode]]
    - [[#org-的中文问题][org 的中文问题]]
      - [[#table-中英文对齐等][table 中英文对齐等]]
+     - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
      - [[#org-以及-latex-等到处中文-pdf][org 以及 LaTex 等到处中文 pdf]]
    - [[#其他中文相关工具][其他中文相关工具]]
      - [[#magit-的中文问题][magit 的中文问题]]
@@ -41,9 +43,64 @@ changelog:
 
 ** Emacs 中使用中文的基础
 
-*** Emacs 的各种字符集问题
+*** Emacs 的各种字符集
 
 各种字符集以及不同平台的格式相关问题.
+
+*** 中文断行
+
+#<<word-break>>
+
+如果开启了 auto-fill 或者使用 refill-mode 等,  Emacs 会根据 fill-column 的大小，在合适的位置插入换行符. 这时候再导出成 html 等格式, 可能导致被自动断行的中文之间多一个空格(中文和英文以及英文与英文之间的空格还是自然的), 一种建议是关掉或者不是用自动断行, 采用 truncate-lines 的方式让 Emacs 自动根据 frame 大小处理成显示层的断行.
+
+另外一种比较常见的做法是在导出的时候, 通过导出的的过滤器机制, 导出之前去掉中文之间的换行的模式, 具体参考有 zwz (http://zwz.github.io/) 和 [[http://emacs-china.org/blog/2015/04/20/org-mode-%E5%AF%BC%E5%87%BA-html-%E6%97%B6%E5%88%A0%E9%99%A4%E4%B8%AD%E6%96%87%E4%B8%8E%E4%B8%AD%E6%96%87%E4%B9%8B%E9%97%B4%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC/][Feng Shu]] 两种类似的实现:
+
+
+#+BEGIN_SRC
+;;; 下面一段是 Feng Shu 的
+(defun eh-org-clean-space (text backend info)
+  "在export为HTML时，删除中文之间不必要的空格"
+  (when (org-export-derived-backend-p backend 'html)
+    (let ((regexp "[[:multibyte:]]")
+          (string text))
+      ;; org默认将一个换行符转换为空格，但中文不需要这个空格，删除。
+      (setq string
+            (replace-regexp-in-string
+             (format "\\(%s\\) *\n *\\(%s\\)" regexp regexp)
+             "\\1\\2" string))
+      ;; 删除粗体之前的空格
+      (setq string
+            (replace-regexp-in-string
+             (format "\\(%s\\) +\\(<\\)" regexp)
+             "\\1\\2" string))
+      ;; 删除粗体之后的空格
+      (setq string
+            (replace-regexp-in-string
+             (format "\\(>\\) +\\(%s\\)" regexp)
+             "\\1\\2" string))
+      string)))
+(add-to-list 'org-export-filter-paragraph-functions
+             'eh-org-clean-space)
+
+
+;;; 下面一段是 zwz 的, 作者声明只适应 org-mode 8.0 以及以上版本
+(defun clear-single-linebreak-in-cjk-string (string)
+  "clear single line-break between cjk characters that is usually soft line-breaks"
+  (let* ((regexp "\\([\u4E00-\u9FA5]\\)\n\\([\u4E00-\u9FA5]\\)")
+         (start (string-match regexp string)))
+    (while start
+      (setq string (replace-match "\\1\\2" nil nil string)
+            start (string-match regexp string start))))
+  string)
+
+(defun ox-html-clear-single-linebreak-for-cjk (string backend info)
+  (when (org-export-derived-backend-p backend 'html)
+    (clear-single-linebreak-in-cjk-string string)))
+
+(add-to-list 'org-export-filter-final-output-functions
+             'ox-html-clear-single-linebreak-for-cjk)
+#+END_SRC
+
 
 *** 文件编码
 
@@ -65,7 +122,10 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
 
 *** 中文字体设置
 
-包括推荐的字体等.
+为了保证显示效果, 一般使用中英文等宽字体(一个中文字显示宽度等于俩个英文字母显示宽度), 推荐字体:
+
+- Ubuntu Mono
+- YaHei Consolas hybrid
 
 *** 日历设置
 
@@ -171,6 +231,11 @@ cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
 
 - 狠狠地折腾了一把Emacs中文字体 BY  BAO HAOJUN http://baohaojun.github.io/perfect-emacs-chinese-font.html
 - 折腾 Emacs BY zhuoqiang http://zhuoqiang.me/torture-emacs.html
+
+
+*** org 导出中文 html 的空格问题
+
+严格来说跟 org 没什么关系, 参见上文的 [[word-break][中文断行]]
 
 *** org 以及 LaTex 等到处中文 pdf
 
