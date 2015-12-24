@@ -235,7 +235,7 @@ cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
 
 *** org 导出中文 html 的空格问题
 
-严格来说跟 org 没什么关系, 参见上文的 [[word-break][中文断行]]
+严格来说跟 org 没什么关系, 参见上文的 [[#中文断行][中文断行]]
 
 *** org 以及 LaTex 等到处中文 pdf
 
