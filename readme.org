@@ -247,9 +247,9 @@ cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
 
 *** org 以及 LaTex 等导出中文 pdf
 
-导出中文也分直接转 LaTex 再转 pdf 以及先转 html 再转 pdf 等各种方式, 中间方案的可以参考这个 http://blog.hickwu.com/posts/339
+导出中文也分直接转 LaTeX 再转 pdf 以及先转 html 再转 pdf 等各种方式, 中间方案的可以参考这个 http://blog.hickwu.com/posts/339
 
-arthur@微信群 http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf
+arthur@微信群 分享的 TeX 解决方案, 用 XeTeX http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf 或者 http://www.doc88.com/p-673855969907.html
 
 ** 其他中文相关工具
 
