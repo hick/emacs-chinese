@@ -24,7 +24,7 @@ changelog:
    - [[#org-的中文问题][org 的中文问题]]
      - [[#table-中英文对齐等][table 中英文对齐等]]
      - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
-     - [[#org-以及-latex-等到处中文-pdf][org 以及 LaTex 等到处中文 pdf]]
+     - [[#org-以及-latex-等导出中文-pdf][org 以及 LaTex 等导出中文 pdf]]
    - [[#其他中文相关工具][其他中文相关工具]]
      - [[#magit-的中文问题][magit 的中文问题]]
      - [[#pinyin-search][pinyin-search]]
@@ -245,12 +245,11 @@ cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
 
 严格来说跟 org 没什么关系, 参见上文的 [[#中文断行][中文断行]]
 
-*** org 以及 LaTex 等到处中文 pdf
+*** org 以及 LaTex 等导出中文 pdf
 
-导出中文也分直接转 LaTex 再转 pdf 以及先转 html 再转 pdf 等各种方式.
+导出中文也分直接转 LaTex 再转 pdf 以及先转 html 再转 pdf 等各种方式, 中间方案的可以参考这个 http://blog.hickwu.com/posts/339
 
 arthur@微信群 http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf
-
 
 ** 其他中文相关工具
 
