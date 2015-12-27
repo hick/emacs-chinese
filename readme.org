@@ -335,14 +335,9 @@ https://github.com/tumashu/chinese-pyim-bigdict
 
 *** Chinese in Spacemacs
 
-- [2015-06-16 15:21:58] 最新消息, 子龙山人给 Spacemacs 贡献了一个中文 layer , 已经提交 pull request:
-  https://github.com/syl20bnr/spacemacs/pull/2024 , 这是使用说明：
-  https://github.com/andyque/spacemacs/blob/add-chinese-layer/contrib/chinese/README.org
+子龙山人给 Spacemacs 贡献了一个中文 layer , [2015-06-16 15:21:58]
 
-
-https://github.com/et2010/Chinese
-
-Spacemacs configuration layer for easy writing in Chinese
+另外还有 et2010 也有一个稍有差别的中文处理 lay:  https://github.com/et2010/Chinese
 
 
 *** Emacs cedict
