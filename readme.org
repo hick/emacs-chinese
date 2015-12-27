@@ -257,7 +257,15 @@ arthur@微信群 http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf
 
 *** magit 的中文问题
 
+按照前面的设置好编码一般不会有问题了. 有收到一种情况是 linux 下的终端的问题, 有网友这样尝试解决了:
 
+#+BEGIN_SRC shell
+vi /etc/profile
+# 添加
+export LESSCHARSET=utf-8
+# 填完以后执行
+source /etc/profile
+#+END_SRC
 
 *** pinyin-search
 
