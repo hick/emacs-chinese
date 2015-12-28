@@ -65,16 +65,20 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
   (set-terminal-coding-system 'utf-8-unix)
   (setq locale-coding-system 'utf-8)
   (prefer-coding-system 'utf-8)
-
-  # 特别注意下文是针对 windows 平台单独处理, windows 某些场景需要 gbk 才能正常
-  (when (eq system-type 'windows-nt)
-    (setq locale-coding-system 'gbk-dos)
-    (set-selection-coding-system 'gbk-dos)
-    (set-next-selection-coding-system 'gbk-dos)
-    (set-clipboard-coding-system 'gbk-dos)))
 #+END_SRC
 
-如果一个非 utf-8 编码, 比如 gbk 编码的文件打开, 可能 Emacs 会乱码, 这时候 ~M-x revert-buffer-with-coding-system~ 选择 gbk 即可.
+*** MS-Windows环境的UTF-8配置
+
+UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令行工具进行交互作时, 如果设置了使用 UTF-8 编码会导致Windows自带程序输出乱码. Emacs的默认设置已经尝试对此类情况进行了处理, 下面的代码在默认设置的基础上设置 cmdproxy.exe 使用GBK编码, 进一步减少设置 UTF-8 编码的副作用:
+
+#+BEGIN_SRC Emacs lisp
+  (when (eq system-type 'windows-nt)
+    (set-default 'process-coding-system-alist
+      '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
+	("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
+#+END_SRC
+
+如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 ~M-x revert-buffer-with-coding-system~ 选择 ~gbk~ 即可.
 
 *** 中文断行
 
