@@ -78,19 +78,19 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
 
 *** 中文断行
 
-如果开启了 auto-fill 或者使用 refill-mode 等,  Emacs 会根据 fill-column 的大小，在合适的位置插入换行符. 这时候再导出成 html 等格式, 可能导致被自动断行的中文之间多一个空格(中文和英文以及英文与英文之间的空格还是自然的), 一种建议是关掉或者不是用自动断行, 采用 truncate-lines 的方式让 Emacs 自动根据 frame 大小处理成显示层的断行.
+如果开启了 auto-fill 或者使用 refill-mode 等,  Emacs 会根据 fill-column 的大小,在合适的位置插入换行符. 这时候再导出成 html 等格式, 可能导致被自动断行的中文之间多一个空格(中文和英文以及英文与英文之间的空格还是自然的), 一种建议是关掉或者不是用自动断行, 采用 truncate-lines 的方式让 Emacs 自动根据 frame 大小处理成显示层的断行.
 
-另外一种比较常见的做法是在导出的时候, 通过导出的过滤器机制, 导出之前去掉中文之间的换行的模式, 具体参考有 zwz (http://zwz.github.io/) 和 [[http://emacs-china.org/blog/2015/04/20/org-mode-%E5%AF%BC%E5%87%BA-html-%E6%97%B6%E5%88%A0%E9%99%A4%E4%B8%AD%E6%96%87%E4%B8%8E%E4%B8%AD%E6%96%87%E4%B9%8B%E9%97%B4%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC/][tumashu]] 两种类似的实现:
+另外一种比较常见的做法是在导出的时候, 通过导出的过滤器机制, 导出之前去掉中文之间的换行的模式, 具体参考有 [[http://zwz.github.io/][zwz]] 和 [[http://emacs-china.org/blog/2015/04/20/org-mode-%E5%AF%BC%E5%87%BA-html-%E6%97%B6%E5%88%A0%E9%99%A4%E4%B8%AD%E6%96%87%E4%B8%8E%E4%B8%AD%E6%96%87%E4%B9%8B%E9%97%B4%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC/][tumashu]] 两种类似的实现:
 
 
 #+BEGIN_SRC
 ;;; 下面一段是 Feng Shu 的
 (defun eh-org-clean-space (text backend info)
-  "在export为HTML时，删除中文之间不必要的空格"
+  "在export为HTML时,删除中文之间不必要的空格"
   (when (org-export-derived-backend-p backend 'html)
     (let ((regexp "[[:multibyte:]]")
           (string text))
-      ;; org默认将一个换行符转换为空格，但中文不需要这个空格，删除。
+      ;; org默认将一个换行符转换为空格,但中文不需要这个空格,删除. 
       (setq string
             (replace-regexp-in-string
              (format "\\(%s\\) *\n *\\(%s\\)" regexp regexp)
@@ -141,7 +141,7 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
 
 *** 日历设置
 
-Emacs 中有日历，而且可以称之为一个系统，因为其中除了最常用的日历之外，还有其他的近十种历法，其中有日记、约会提醒、纪念日提示以及节假日提示等等。其中的历法包括中国的农历、希伯来历、伊斯兰历、法国革命历、中美玛雅历等等，可以根据经纬度告知你的所在的每天日出日落的时间等等。
+Emacs 中有日历, 而且可以称之为一个系统, 因为其中除了最常用的日历之外, 还有其他的近十种历法, 其中有日记、约会提醒、纪念日提示以及节假日提示等等. 其中的历法包括中国的农历、希伯来历、伊斯兰历、法国革命历、中美玛雅历等等,可以根据经纬度告知你的所在的每天日出日落的时间等等. 
 
 Emacs 自带 calc-china.el
 
@@ -157,7 +157,7 @@ Emacs 自带 calc-china.el
 设置阳历节日和阴历节日(参考 fog_proxy @ http://www.linuxsir.org/bbs/thread232256.html):
 
 #+BEGIN_SRC Emacs lisp
-;;; 补充用法: holiday-float m w n 浮动阳历节日， m 月的第 n 个星期 w%7
+;;; 补充用法: holiday-float m w n 浮动阳历节日, m 月的第 n 个星期 w%7
 (setq general-holidays '((holiday-fixed 1 1   "元旦")
                          (holiday-fixed 2 14  "情人节")
                          (holiday-fixed 4 1   "愚人节")
@@ -210,17 +210,17 @@ Emacs 自带 calc-china.el
 
 
 - chinese-pyim  https://github.com/tumashu/chinese-pyim
-  chinese-pyim是从eim拼音输入法进化来的，个人感觉比eim拼音输入法好用
+  chinese-pyim是从eim拼音输入法进化来的, 个人感觉比eim拼音输入法好用
 
 - https://github.com/cute-jumper/fcitx.el
   Make fcitx better in Emacs.
 
 - https://github.com/tumashu/chinese-remote-input
   chinese-remote-input
-  在emacs中，通过智能手机输入法（比如：android语音输入法）远程输入中文。
+  在emacs中, 通过智能手机输入法（比如：android语音输入法）远程输入中文. 
 
 - scel2pyim https://github.com/E-Neo/scel2pyim
-  一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具。
+  一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具. 
 
 
 - https://github.com/district10/gat
@@ -230,10 +230,7 @@ Emacs 自带 calc-china.el
 
 *** table 中英文对齐等
 
-因为 Emacs 处理字体的方式的问题, 即使设置字体为等宽字体(一个中文相当于两个英文宽度), org 中的 table 出现中文经常都无法工整的对齐.
-需要分别对中英文字体设置合适的大小. 处理该问题有现成的方案: https://github.com/tumashu/chinese-fonts-setup . 其中默认定义了各个
-系统平台常见的字体以及中英文字体搭配, 使得 org table 里的出现中文也能很好的对齐. 如果安装好以后显示的字体过大, 可以通过
-cfs-increase-fontsize/cfs-decrease-fontsize 调整选择合适的大小.
+因为 Emacs 处理字体的方式的问题, 即使设置字体为等宽字体(一个中文相当于两个英文宽度), org 中的 table 出现中文经常都无法工整的对齐. 需要分别对中英文字体设置合适的大小. 处理该问题有现成的方案: https://github.com/tumashu/chinese-fonts-setup . 其中默认定义了各个系统平台常见的字体以及中英文字体搭配, 使得 org table 里的出现中文也能很好的对齐. 如果安装好以后显示的字体过大, 可以通过 ~cfs-increase-fontsize/cfs-decrease-fontsize~ 调整选择合适的大小.
 
 更多参考资料:
 
@@ -295,7 +292,7 @@ Hanzi to Pinyin converter for Emacs
 
 *** pyim-hanzi2pinyin
 
-是一个汉字转拼音得函数，包含在chinese-pyim中，主要用于生成词库 @tushuma 天然二呆
+是一个汉字转拼音得函数, 包含在chinese-pyim中, 主要用于生成词库 @tushuma 天然二呆
 
 *** ido-pinyin
 
@@ -325,13 +322,13 @@ https://github.com/xuchunyang/chinese-word-at-point.el
 
 https://github.com/tumashu/chinese-fonts-setup
 
-emacs中文字体配置工具。可以快速方便的的实现中文字体和英文字体等宽（也就是常说的中英文对齐）
+emacs中文字体配置工具. 可以快速方便的的实现中文字体和英文字体等宽（也就是常说的中英文对齐）
 
 *** chinese-pyim-bigdict
 
 https://github.com/tumashu/chinese-pyim-bigdict
 
-这个文件是一个 Chinese-pyim 拼音词库文件，词量超过100万，词库大于20M，这个词库仅供个人使用。
+这个文件是一个 Chinese-pyim 拼音词库文件, 词量超过100万, 词库大于20M, 这个词库仅供个人使用. 
 
 *** Chinese in Spacemacs
 
@@ -352,7 +349,6 @@ Emacs interface to Chinese-English dictionary in CEDICT format.
 
 ** 参考和鸣谢
 
-本文档由 hick 初始整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候,
-发现有各种做法, 引发整理中文问题的想法.
+本文档由 hick 初始整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候, 发现有各种做法, 引发整理中文问题的想法.
 
 欢迎提议和补充条目.
