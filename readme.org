@@ -90,7 +90,7 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
   (when (org-export-derived-backend-p backend 'html)
     (let ((regexp "[[:multibyte:]]")
           (string text))
-      ;; org默认将一个换行符转换为空格,但中文不需要这个空格,删除. 
+      ;; org默认将一个换行符转换为空格,但中文不需要这个空格,删除.
       (setq string
             (replace-regexp-in-string
              (format "\\(%s\\) *\n *\\(%s\\)" regexp regexp)
@@ -141,7 +141,7 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
 
 *** 日历设置
 
-Emacs 中有日历, 而且可以称之为一个系统, 因为其中除了最常用的日历之外, 还有其他的近十种历法, 其中有日记、约会提醒、纪念日提示以及节假日提示等等. 其中的历法包括中国的农历、希伯来历、伊斯兰历、法国革命历、中美玛雅历等等,可以根据经纬度告知你的所在的每天日出日落的时间等等. 
+Emacs 中有日历, 而且可以称之为一个系统, 因为其中除了最常用的日历之外, 还有其他的近十种历法, 其中有日记、约会提醒、纪念日提示以及节假日提示等等. 其中的历法包括中国的农历、希伯来历、伊斯兰历、法国革命历、中美玛雅历等等,可以根据经纬度告知你的所在的每天日出日落的时间等等.
 
 Emacs 自带 calc-china.el
 
@@ -217,10 +217,10 @@ Emacs 自带 calc-china.el
 
 - https://github.com/tumashu/chinese-remote-input
   chinese-remote-input
-  在emacs中, 通过智能手机输入法（比如：android语音输入法）远程输入中文. 
+  在emacs中, 通过智能手机输入法（比如：android语音输入法）远程输入中文.
 
 - scel2pyim https://github.com/E-Neo/scel2pyim
-  一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具. 
+  一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具.
 
 
 - https://github.com/district10/gat
@@ -298,7 +298,7 @@ Hanzi to Pinyin converter for Emacs
 
 https://github.com/pengpengxp/ido-pinyin
 
-Make ido support chinese pinyin 2015-06-14: 新生不久, 可能问题还比较多 :)
+Make ido support chinese pinyin
 
 *** pangu-spacing
 
@@ -328,11 +328,11 @@ emacs中文字体配置工具. 可以快速方便的的实现中文字体和英�
 
 https://github.com/tumashu/chinese-pyim-bigdict
 
-这个文件是一个 Chinese-pyim 拼音词库文件, 词量超过100万, 词库大于20M, 这个词库仅供个人使用. 
+这个文件是一个 Chinese-pyim 拼音词库文件, 词量超过100万, 词库大于20M, 这个词库仅供个人使用.
 
 *** Chinese in Spacemacs
 
-子龙山人给 Spacemacs 贡献了一个中文 layer , [2015-06-16 15:21:58]
+子龙山人给 Spacemacs 贡献了一个中文 layer
 
 另外还有 et2010 也有一个稍有差别的中文处理 lay:  https://github.com/et2010/Chinese
 
