@@ -14,6 +14,7 @@ changelog:
  - [[#emacs相关中文问题以及解决方案][Emacs相关中文问题以及解决方案]]
    - [[#emacs-中文基础][Emacs 中文基础]]
      - [[#emacs-的各种字符集][Emacs 的各种字符集]]
+     - [[#ms-windows环境的utf-8配置][MS-Windows环境的UTF-8配置]]
      - [[#中文断行][中文断行]]
      - [[#中文字体设置][中文字体设置]]
      - [[#日历设置][日历设置]]
@@ -50,7 +51,7 @@ Emacs 中的文件编码问题跟其他编辑器不大一样,  ~M-x describe-cod
 
 默认配置下, mode line 最左会显示当前文件编码以及换行符格式, 比如 U(Unix) 标示 UTF-8 编码, UNIX 格式换行符,鼠标点击可以查看更多详情.
 
-Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码的 mode ,  有看到反馈说有时候不能成功检测: Unicad is short for Universal Charset Auto Detector. It is an Emacs-Lisp port of Mozilla Universal Charset Detector.
+[[http://www.emacswiki.org/emacs/Unicad][Unicad]]  是一个自动检测文件编码的 mode ,  有看到反馈说有时候不能成功检测: Unicad is short for Universal Charset Auto Detector. It is an Emacs-Lisp port of Mozilla Universal Charset Detector.
 
 
 #+BEGIN_SRC Emacs lisp
@@ -67,9 +68,11 @@ Unicad http://www.emacswiki.org/emacs/Unicad 是一个自动检测文件编码�
   (prefer-coding-system 'utf-8)
 #+END_SRC
 
+如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 ~M-x revert-buffer-with-coding-system~ 选择 ~gbk~ 即可.
+
 *** MS-Windows环境的UTF-8配置
 
-UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令行工具进行交互作时, 如果设置了使用 UTF-8 编码会导致Windows自带程序输出乱码. Emacs的默认设置已经尝试对此类情况进行了处理, 下面的代码在默认设置的基础上设置 cmdproxy.exe 使用GBK编码, 进一步减少设置 UTF-8 编码的副作用:
+UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令行工具进行交互作时, 如果设置了使用 UTF-8 编码会导致 Windows 自带程序输出乱码. Emacs的默认设置已经尝试对此类情况进行了处理, 下面的代码在默认设置的基础上设置 cmdproxy.exe 使用GBK编码, 进一步减少设置 UTF-8 编码的副作用:
 
 #+BEGIN_SRC Emacs lisp
   (when (eq system-type 'windows-nt)
@@ -78,7 +81,6 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
 	("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
 #+END_SRC
 
-如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 ~M-x revert-buffer-with-coding-system~ 选择 ~gbk~ 即可.
 
 *** 中文断行
 
@@ -354,5 +356,9 @@ Emacs interface to Chinese-English dictionary in CEDICT format.
 ** 参考和鸣谢
 
 本文档由 hick 初始整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候, 发现有各种做法, 引发整理中文问题的想法.
+
+特别鸣谢一下同学的贡献:
+
+- [[https://github.com/zklhp][zklhp]] 补充 windows 环境的处理
 
 欢迎提议和补充条目.
