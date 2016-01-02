@@ -27,20 +27,20 @@ changelog:
      - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
      - [[#org-以及-latex-等导出中文-pdf][org 以及 LaTex 等导出中文 pdf]]
    - [[#其他中文相关工具][其他中文相关工具]]
-     - [[#magit-的中文问题][magit 的中文问题]]
-     - [[#pinyin-search][pinyin-search]]
      - [[#ace-pinyin][ace-pinyin]]
-     - [[#find-by-pinyin-dired][find-by-pinyin-dired]]
-     - [[#emacs-hz2py][emacs-hz2py]]
-     - [[#pyim-hanzi2pinyin][pyim-hanzi2pinyin]]
-     - [[#ido-pinyin][ido-pinyin]]
-     - [[#pangu-spacing][pangu-spacing]]
+     - [[#cedict][cedict]]
      - [[#chinese-word-at-point][chinese-word-at-point]]
      - [[#chinese-fonts-setup][chinese-fonts-setup]]
      - [[#chinese-pyim-bigdict][chinese-pyim-bigdict]]
      - [[#chinese-in-spacemacs][Chinese in Spacemacs]]
+     - [[#emacs-hz2py][emacs-hz2py]]
+     - [[#find-by-pinyin-dired][find-by-pinyin-dired]]
+     - [[#ido-pinyin][ido-pinyin]]
+     - [[#magit-的中文问题][magit 的中文问题]]
+     - [[#pangu-spacing][pangu-spacing]]
+     - [[#pinyin-search][pinyin-search]]
+     - [[#pyim-hanzi2pinyin][pyim-hanzi2pinyin]]
      - [[#tael-同音字处理][ta.el 同音字处理]]
-     - [[#emacs-cedict][Emacs cedict]]
      - [[#欢迎补充][欢迎补充]]
    - [[#参考和鸣谢][参考和鸣谢]]
 
@@ -258,23 +258,7 @@ arthur@微信群 分享的 TeX 解决方案, 用 XeTeX http://home.ustc.edu.cn/~
 ** 其他中文相关工具
 
 
-*** magit 的中文问题
 
-按照前面的设置好编码一般不会有问题了. 有收到一种情况是 linux 下的终端的问题, 有网友这样尝试解决了:
-
-#+BEGIN_SRC shell
-vi /etc/profile
-# 添加
-export LESSCHARSET=utf-8
-# 填完以后执行
-source /etc/profile
-#+END_SRC
-
-*** pinyin-search
-
-https://github.com/xuchunyang/pinyin-search.el
-
-Search Chinese by the first letter of Chinese pinyin.
 
 *** ace-pinyin
 
@@ -284,36 +268,12 @@ Jump to Chinese characters using ace-jump-char-mode or avy-goto-char :
 input the first letter of the pinyin of the Chinese character, then use
 ace-jump-char-mode or avy-goto-char to jump to it.
 
-*** find-by-pinyin-dired
+*** cedict
 
-https://github.com/redguardtoo/find-by-pinyin-dired
+https://github.com/danmey/cedict.el
 
-Find file by first Pinyin characters of Chinese Hanzi. 输入拼音首字母定位对应的中文目录/文件
+Emacs interface to Chinese-English dictionary in CEDICT format.
 
-*** emacs-hz2py
-
-https://github.com/kawabata/emacs-hz2py
-
-Hanzi to Pinyin converter for Emacs
-
-
-*** pyim-hanzi2pinyin
-
-是一个汉字转拼音得函数, 包含在chinese-pyim中, 主要用于生成词库 @tushuma 天然二呆
-
-*** ido-pinyin
-
-https://github.com/pengpengxp/ido-pinyin
-
-Make ido support chinese pinyin
-
-*** pangu-spacing
-
-emacs minor-mode to add space between Chinese and English characters.
-
-https://github.com/coldnew/pangu-spacing
-
-看演示 gif 挺好玩.
 
 *** chinese-word-at-point
 
@@ -345,17 +305,64 @@ https://github.com/tumashu/chinese-pyim-bigdict
 
 
 
+*** emacs-hz2py
+
+https://github.com/kawabata/emacs-hz2py
+
+Hanzi to Pinyin converter for Emacs
+
+
+*** find-by-pinyin-dired
+
+https://github.com/redguardtoo/find-by-pinyin-dired
+
+Find file by first Pinyin characters of Chinese Hanzi. 输入拼音首字母定位对应的中文目录/文件
+
+*** ido-pinyin
+
+https://github.com/pengpengxp/ido-pinyin
+
+Make ido support chinese pinyin
+
+*** magit 的中文问题
+
+按照前面的设置好编码一般不会有问题了. 有收到一种情况是 linux 下的终端的问题, 有网友这样尝试解决了:
+
+#+BEGIN_SRC shell
+vi /etc/profile
+# 添加
+export LESSCHARSET=utf-8
+# 填完以后执行
+source /etc/profile
+#+END_SRC
+
+*** pangu-spacing
+
+emacs minor-mode to add space between Chinese and English characters.
+
+https://github.com/coldnew/pangu-spacing
+
+看演示 gif 挺好玩.
+
+
+*** pinyin-search
+
+https://github.com/xuchunyang/pinyin-search.el
+
+Search Chinese by the first letter of Chinese pinyin.
+
+*** pyim-hanzi2pinyin
+
+是一个汉字转拼音得函数, 包含在chinese-pyim中, 主要用于生成词库 @tushuma 天然二呆
+
+
+
 *** ta.el 同音字处理
 
 台湾的 [[https://github.com/kuanyui][kuanyui]] 写的处理同音字的 mode ,  https://github.com/kuanyui/ta.el
 
 [[https://github.com/kuanyui/ta.el/raw/master/demo.gif]]
 
-*** Emacs cedict
-
-https://github.com/danmey/cedict.el
-
-Emacs interface to Chinese-English dictionary in CEDICT format.
 
 
 *** 欢迎补充
