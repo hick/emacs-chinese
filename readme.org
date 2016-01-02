@@ -14,7 +14,7 @@ changelog:
  - [[#emacs相关中文问题以及解决方案][Emacs相关中文问题以及解决方案]]
    - [[#emacs-中文基础][Emacs 中文基础]]
      - [[#emacs-的各种字符集][Emacs 的各种字符集]]
-     - [[#ms-windows环境的utf-8配置][MS-Windows环境的UTF-8配置]]
+     - [[#ms-windows-环境的-utf-8-配置][MS-Windows 环境的 UTF-8 配置]]
      - [[#中文断行][中文断行]]
      - [[#中文字体设置][中文字体设置]]
      - [[#日历设置][日历设置]]
@@ -39,6 +39,7 @@ changelog:
      - [[#chinese-fonts-setup][chinese-fonts-setup]]
      - [[#chinese-pyim-bigdict][chinese-pyim-bigdict]]
      - [[#chinese-in-spacemacs][Chinese in Spacemacs]]
+     - [[#tael-同音字处理][ta.el 同音字处理]]
      - [[#emacs-cedict][Emacs cedict]]
      - [[#欢迎补充][欢迎补充]]
    - [[#参考和鸣谢][参考和鸣谢]]
@@ -70,7 +71,7 @@ Emacs 中的文件编码问题跟其他编辑器不大一样,  ~M-x describe-cod
 
 如果一个非 UTF-8 编码, 比如 GBK 编码的文件打开, 可能 Emacs 会乱码, 这时候 ~M-x revert-buffer-with-coding-system~ 选择 ~gbk~ 即可.
 
-*** MS-Windows环境的UTF-8配置
+*** MS-Windows 环境的 UTF-8 配置
 
 UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令行工具进行交互作时, 如果设置了使用 UTF-8 编码会导致 Windows 自带程序输出乱码. Emacs的默认设置已经尝试对此类情况进行了处理, 下面的代码在默认设置的基础上设置 cmdproxy.exe 使用GBK编码, 进一步减少设置 UTF-8 编码的副作用:
 
@@ -343,6 +344,13 @@ https://github.com/tumashu/chinese-pyim-bigdict
 另外还有 et2010 也有一个稍有差别的中文处理 lay:  https://github.com/et2010/Chinese
 
 
+
+*** ta.el 同音字处理
+
+台湾的 [[https://github.com/kuanyui][kuanyui]] 写的处理同音字的 mode ,  https://github.com/kuanyui/ta.el
+
+[[https://github.com/kuanyui/ta.el/raw/master/demo.gif]]
+
 *** Emacs cedict
 
 https://github.com/danmey/cedict.el
@@ -357,7 +365,7 @@ Emacs interface to Chinese-English dictionary in CEDICT format.
 
 本文档由 hick 初始整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候, 发现有各种做法, 引发整理中文问题的想法.
 
-特别鸣谢一下同学的贡献:
+特别鸣谢以下同学的贡献:
 
 - [[https://github.com/zklhp][zklhp]] 补充 windows 环境的处理
 
