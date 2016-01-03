@@ -6,6 +6,7 @@
 
 changelog:
 
+- 2016-01-01 安装包镜像/安装源中国大陆服务器
 - 2015-12-27 文件编码问题整理
 - 2015-12-25 中文断行(org 导出 html 有空格)等问题
 - 2015-06-15 构思好基本结构, 通过 QQ 群/微信群 收集整理, 逐步完善中.
@@ -27,6 +28,7 @@ changelog:
      - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
      - [[#org-以及-latex-等导出中文-pdf][org 以及 LaTex 等导出中文 pdf]]
    - [[#其他中文相关工具][其他中文相关工具]]
+     - [[#安装包镜像安装源中国大陆服务器][安装包镜像/安装源中国大陆服务器]]
      - [[#ace-pinyin][ace-pinyin]]
      - [[#cedict][cedict]]
      - [[#chinese-word-at-point][chinese-word-at-point]]
@@ -54,6 +56,7 @@ Emacs 中的文件编码问题跟其他编辑器不大一样,  ~M-x describe-cod
 
 [[http://www.emacswiki.org/emacs/Unicad][Unicad]]  是一个自动检测文件编码的 mode ,  有看到反馈说有时候不能成功检测: Unicad is short for Universal Charset Auto Detector. It is an Emacs-Lisp port of Mozilla Universal Charset Detector.
 
+不同版本的 Emacs 可能设置方法不一样, 推荐下面的设置:
 
 #+BEGIN_SRC Emacs lisp
   (set-language-environment "UTF-8")
@@ -90,7 +93,7 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
 另外一种比较常见的做法是在导出的时候, 通过导出的过滤器机制, 导出之前去掉中文之间的换行的模式, 具体参考有 [[http://zwz.github.io/][zwz]] 和 [[http://emacs-china.org/blog/2015/04/20/org-mode-%E5%AF%BC%E5%87%BA-html-%E6%97%B6%E5%88%A0%E9%99%A4%E4%B8%AD%E6%96%87%E4%B8%8E%E4%B8%AD%E6%96%87%E4%B9%8B%E9%97%B4%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC/][tumashu]] 两种类似的实现:
 
 
-#+BEGIN_SRC
+#+BEGIN_SRC Emacs lisp
 ;;; 下面一段是 Feng Shu 的
 (defun eh-org-clean-space (text backend info)
   "在export为HTML时,删除中文之间不必要的空格"
@@ -257,7 +260,14 @@ arthur@微信群 分享的 TeX 解决方案, 用 XeTeX http://home.ustc.edu.cn/~
 
 ** 其他中文相关工具
 
+*** 安装包镜像/安装源中国大陆服务器
 
+由于大陆地区特殊的网络条件, 直连国外的 ELPA 服务器可能特别慢甚至有时候安装不成功,  [[https://github.com/aborn/][@aborn]] 有搭建的镜像, ELPA 的 EmacsWiki 上也有 [[http://www.emacswiki.org/emacs/ELPA_(%25E4%25B8%25AD%25E6%2596%2587)][相关说明]] :
+
+#+BEGIN_SRC Emacs lisp
+(add-to-list 'package-archives
+          '("aborn" . "http://elpa.popkit.org/packages/"))
+#+END_SRC
 
 
 *** ace-pinyin
