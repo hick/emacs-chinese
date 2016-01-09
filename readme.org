@@ -88,7 +88,7 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
 
 *** 中文断行
 
-如果开启了 auto-fill 或者使用 refill-mode 等,  Emacs 会根据 fill-column 的大小,在合适的位置插入换行符. 这时候再导出成 html 等格式, 可能导致被自动断行的中文之间多一个空格(中文和英文以及英文与英文之间的空格还是自然的), 一种建议是关掉或者不是用自动断行, 采用 truncate-lines 的方式让 Emacs 自动根据 frame 大小处理成显示层的断行.
+如果开启了 auto-fill 或者使用 refill-mode 等,  Emacs 会根据 fill-column 的大小,在合适的位置插入换行符. 这时候再导出成 html 等格式, 可能导致被自动断行的中文之间多一个空格(中文和英文以及英文与英文之间的空格还是自然的), 一种建议是关掉或者不是用自动断行, 采用 truncate-lines 的方式让 Emacs 自动根据 window 大小处理成显示层的断行.
 
 另外一种比较常见的做法是在导出的时候, 通过导出的过滤器机制, 导出之前去掉中文之间的换行的模式, 具体参考有 [[http://zwz.github.io/][zwz]] 和 [[http://emacs-china.org/blog/2015/04/20/org-mode-%E5%AF%BC%E5%87%BA-html-%E6%97%B6%E5%88%A0%E9%99%A4%E4%B8%AD%E6%96%87%E4%B8%8E%E4%B8%AD%E6%96%87%E4%B9%8B%E9%97%B4%E5%A4%9A%E4%BD%99%E7%9A%84%E7%A9%BA%E6%A0%BC/][tumashu]] 两种类似的实现:
 
@@ -164,7 +164,7 @@ Emacs 自带 calc-china.el
           ["子" "丑" "寅" "卯" "辰" "巳" "午" "未" "申" "酉" "戌" "亥"])
 #+END_SRC
 
-设置阳历节日和阴历节日(参考 fog_proxy @ http://www.linuxsir.org/bbs/thread232256.html):
+设置阳历节日和阴历节日(参考 [[http://www.linuxsir.org/bbs/thread232256.html][fog_proxy]] ):
 
 #+BEGIN_SRC Emacs lisp
 ;;; 补充用法: holiday-float m w n 浮动阳历节日, m 月的第 n 个星期 w%7
@@ -190,15 +190,13 @@ Emacs 自带 calc-china.el
 
 #+END_SRC
 
-另外一种中文阴历节日的 holiday-lunar 的写法参考自:  http://xlambda.com/blog/2010/01/11/customize-calendar-in-emacs/
+另外一种中文阴历节日的 holiday-lunar 的写法参考自:  [[http://xlambda.com/blog/2010/01/11/customize-calendar-in-emacs/][在emacs Calendar中定制中国农历节日]]
 
 
 更强大的中文日历工具:
 
-- chinese-calendar.el calendar for chinese
-  http://www.newsmth.net/bbsanc.php?path=%2Fgroups%2Fcomp.faq%2FEmacs%2Farchives%2Farchive2005%2FM.1121269541.D0
-
--  William Xu 写的 中文版日历 https://github.com/xwl/cal-china-x/blob/master/cal-china-x.el
+- [[http://www.newsmth.net/bbsanc.php?path=%252Fgroups%252Fcomp.faq%252FEmacs%252Farchives%252Farchive2005%252FM.1121269541.D0][chinese-calendar.el calendar for chinese]]
+-  [[https://github.com/xwl/cal-china-x/blob/master/cal-china-x.el][William Xu 写的 中文版日历]]
 
 ** 中文输入
 
@@ -212,29 +210,19 @@ Emacs 自带 calc-china.el
 
 *** 输入法相关 mode
 
-- https://github.com/danking/eim-py
-  eim-py: An Emacs Input Method extension for smart pinyin
+- [[https://github.com/danking/eim-py][eim-py: An Emacs Input Method extension for smart pinyin]]
 
-- https://github.com/gongzhitaao/chinese-wubi
-  Emacs 中使用五笔输入法: Chinese Wubi (五笔) input method for Emacs based on quail package.
+- [[https://github.com/gongzhitaao/chinese-wubi][Emacs 中使用五笔输入法: Chinese Wubi (五笔) input method for Emacs based on quail package.]]
 
+- [[https://github.com/tumashu/chinese-pyim][chinese-pyim]] chinese-pyim是从eim拼音输入法进化来的, 个人感觉比eim拼音输入法好用
 
-- chinese-pyim  https://github.com/tumashu/chinese-pyim
-  chinese-pyim是从eim拼音输入法进化来的, 个人感觉比eim拼音输入法好用
+- [[https://github.com/cute-jumper/fcitx.el][Make fcitx better in Emacs.]]
 
-- https://github.com/cute-jumper/fcitx.el
-  Make fcitx better in Emacs.
+- [[https://github.com/tumashu/chinese-remote-input][chinese-remote-input]] 在emacs中, 通过智能手机输入法（比如：android语音输入法）远程输入中文.
 
-- https://github.com/tumashu/chinese-remote-input
-  chinese-remote-input
-  在emacs中, 通过智能手机输入法（比如：android语音输入法）远程输入中文.
+- [[https://github.com/E-Neo/scel2pyim][scel2pyim]] 一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具.
 
-- scel2pyim https://github.com/E-Neo/scel2pyim
-  一个个将搜狗输入法 scel 细胞词库转换为 chinese-pyim 文本词库的小工具.
-
-
-- https://github.com/district10/gat
-  Gat, Chinese Input Method, works in Emacs
+- [[https://github.com/district10/gat][Gat, Chinese Input Method, works in Emacs]]
 
 ** org 的中文问题
 
@@ -244,9 +232,8 @@ Emacs 自带 calc-china.el
 
 更多参考资料:
 
-- 狠狠地折腾了一把Emacs中文字体 BY  BAO HAOJUN http://baohaojun.github.io/perfect-emacs-chinese-font.html
-- 折腾 Emacs BY zhuoqiang http://zhuoqiang.me/torture-emacs.html
-
+- [[http://baohaojun.github.io/perfect-emacs-chinese-font.html][狠狠地折腾了一把Emacs中文字体]] BY  BAO HAOJUN
+- [[http://zhuoqiang.me/torture-emacs.html][折腾 Emacs]] BY zhuoqiang
 
 *** org 导出中文 html 的空格问题
 
@@ -269,6 +256,7 @@ arthur@微信群 分享的 TeX 解决方案, 用 XeTeX http://home.ustc.edu.cn/~
           '("aborn" . "http://elpa.popkit.org/packages/"))
 #+END_SRC
 
+顺带提一句, 如果 ~M-x package-install~ 出现找不到包的 url , 可能是本地缓存的包地址已经升级变换, ~M-x package-refresh-contents~ 可能就可以了.
 
 *** ace-pinyin
 
