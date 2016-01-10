@@ -145,17 +145,17 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
 
 为了保证显示效果, 一般使用中英文等宽字体(一个中文字显示宽度等于俩个英文字母显示宽度), 推荐字体:
 
-- Ubuntu Mono
-- YaHei Consolas hybrid
-- 文泉驿等宽微米黑
+- 文泉驿等宽微米黑优化版.ttf
+- 雅黑mono.ttf
+- DroidSansFallback.ttf
+
+以上字体都饱含中文字体, 可以点 [[http://pan.baidu.com/s/1dDWUSNn][百度网盘]] 下载.
 
 *** 日历设置
 
 Emacs 中有日历, 而且可以称之为一个系统, 因为其中除了最常用的日历之外, 还有其他的近十种历法, 其中有日记、约会提醒、纪念日提示以及节假日提示等等. 其中的历法包括中国的农历、希伯来历、伊斯兰历、法国革命历、中美玛雅历等等,可以根据经纬度告知你的所在的每天日出日落的时间等等.
 
-Emacs 自带 calc-china.el
-
-一下为设置中文里的 ‘celestial-stem’ (天干) 和 ‘terrestrial-branch’ (地支):
+Emacs 自带 calc-china.el , 以下为设置中文里的 ‘celestial-stem’ (天干) 和 ‘terrestrial-branch’ (地支):
 
 #+BEGIN_SRC Emacs lisp
 (setq chinese-calendar-celestial-stem
