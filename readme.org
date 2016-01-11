@@ -149,7 +149,7 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
 - 雅黑mono.ttf
 - DroidSansFallback.ttf
 
-以上字体都饱含中文字体, 可以点 [[http://pan.baidu.com/s/1dDWUSNn][百度网盘]] 下载.
+以上字体都包含中文字体, 可以点 [[http://pan.baidu.com/s/1dDWUSNn][百度网盘]] 下载.
 
 *** 日历设置
 
@@ -241,9 +241,9 @@ Emacs 自带 calc-china.el , 以下为设置中文里的 ‘celestial-stem’ (�
 
 *** org 以及 LaTex 等导出中文 pdf
 
-导出中文也分直接转 LaTeX 再转 pdf 以及先转 html 再转 pdf 等各种方式, 中间方案的可以参考这个 http://blog.hickwu.com/posts/339
+导出中文也分直接转 LaTeX 再转 pdf 以及先转 html 再转 pdf 等各种方式, 中间方案的可以参考这个 [[http://blog.hickwu.com/posts/340][中文支持不错的pdf工具rst2pdf]]
 
-arthur@微信群 分享的 TeX 解决方案, 用 XeTeX http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf 或者 http://www.doc88.com/p-673855969907.html
+arthur@微信群 分享的 TeX 解决方案, 用 [[http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf][XeTeX]] 或者 [[http://www.doc88.com/p-673855969907.html][xetex-tutorial]] .
 
 ** 其他中文相关工具
 
@@ -275,13 +275,11 @@ Emacs interface to Chinese-English dictionary in CEDICT format.
 
 *** chinese-word-at-point
 
+https://github.com/xuchunyang/chinese-word-at-point.el
+
 Get (most likely) Chinese word under the cursor in Emacs
 
 中文分词跟英文可以时候完全不是一回事, 徐春阳同学弄的这个, 依赖外部分词的命令行: 可以用结巴分词或者 SCWS (简易中文分词系统).
-
-https://github.com/xuchunyang/chinese-word-at-point.el
-
-
 
 *** chinese-fonts-setup
 
@@ -336,9 +334,9 @@ source /etc/profile
 
 *** pangu-spacing
 
-emacs minor-mode to add space between Chinese and English characters.
-
 https://github.com/coldnew/pangu-spacing
+
+emacs minor-mode to add space between Chinese and English characters.
 
 看演示 gif 挺好玩.
 
