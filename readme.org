@@ -50,7 +50,9 @@ changelog:
 
 *** Emacs 的各种字符集
 
-Emacs 中的文件编码问题跟其他编辑器不大一样,  ~M-x describe-coding-system~ 能看到所有可选择编码, 除了常见的 utf-8 这样的, dos/unix 这样的换行符也作为了编码的一部分. 作为比较通用的方式, 一般建议没有特殊需要都使用 utf-8 编码,  unix 还是 dos 看个人需要.
+Emacs 中的文件编码问题跟其他编辑器不大一样,  ~M-x describe-current-coding-system~ 能查看 Emacs 当前编码设置的情况, ~M-x describe-coding-system~ 能看到所有可选择编码, 除了常见的 utf-8 这样的, dos/unix 这样的换行符也作为了编码的一部分. 作为比较通用的方式, 一般建议没有特殊需要都使用 utf-8 编码,  unix 还是 dos 看个人需要.
+
+
 
 默认配置下, mode line 最左会显示当前文件编码以及换行符格式, 比如 U(Unix) 标示 UTF-8 编码, UNIX 格式换行符,鼠标点击可以查看更多详情.
 
