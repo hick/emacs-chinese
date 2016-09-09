@@ -4,8 +4,10 @@
 
 本文力图收集整理 Emacs 使用过程中的中文相关问题以及解决方案. 有问题欢迎反馈, 也欢迎 issue 或者其他方式补充问题, 修正或者增加解决方案.
 
-changelog:
+changelog
+:
 
+- 2016-09-09 增加清华和 Emacs-China 的 elpa 镜像
 - 2016-01-01 安装包镜像/安装源中国大陆服务器
 - 2015-12-27 文件编码问题整理
 - 2015-12-25 中文断行(org 导出 html 有空格)等问题
@@ -251,7 +253,19 @@ arthur@微信群 分享的 TeX 解决方案, 用 [[http://home.ustc.edu.cn/~zpj/
 
 *** 安装包镜像/安装源中国大陆服务器
 
-由于大陆地区特殊的网络条件, 直连国外的 ELPA 服务器可能特别慢甚至有时候安装不成功,  [[https://github.com/aborn/][@aborn]] 有搭建的镜像, ELPA 的 EmacsWiki 上也有 [[http://www.emacswiki.org/emacs/ELPA_(%25E4%25B8%25AD%25E6%2596%2587)][相关说明]] :
+由于大陆地区特殊的网络条件, 直连国外的 ELPA 服务器可能特别慢甚至有时候安装不成功, 有以下几个国内镜像推荐大家使用.
+
+"清华大学 TUNA 协会原名清华大学学生网管会，注册名清华大学学生网络与开源软件协会" 搭建的镜像, 因为有清华的网络后盾,
+比较推荐这个, 其中也包括 marmalade 和 org 等几个其他 Emacs 包的镜像:
+
+https://mirrors.tuna.tsinghua.edu.cn/elpa/
+
+国内的 Emacs 爱好者搭建的 [[https://emacs-china.org/][Emacs-China]] (作为 Emacs 专属社区也是一个很好的地方) 的镜像也跟上面的类似, 还包括简单的使用方法说明:
+
+http://elpa.emacs-china.org/
+
+
+[[https://github.com/aborn/][@aborn]] 有搭建的镜像, ELPA 的 EmacsWiki 上也有 [[http://www.emacswiki.org/emacs/ELPA_(%25E4%25B8%25AD%25E6%2596%2587)][相关说明]] :
 
 #+BEGIN_SRC Emacs lisp
 (add-to-list 'package-archives
