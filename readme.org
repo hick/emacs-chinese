@@ -45,6 +45,7 @@ changelog
      - [[#pinyin-search][pinyin-search]]
      - [[#pyim-hanzi2pinyin][pyim-hanzi2pinyin]]
      - [[#tael-同音字处理][ta.el 同音字处理]]
+     - [[#中文分词工具][中文分词工具]]
      - [[#欢迎补充][欢迎补充]]
    - [[#参考和鸣谢][参考和鸣谢]]
 
@@ -374,6 +375,10 @@ Search Chinese by the first letter of Chinese pinyin.
 台湾的 [[https://github.com/kuanyui][kuanyui]] 写的处理同音字的 mode ,  https://github.com/kuanyui/ta.el
 
 [[https://github.com/kuanyui/ta.el/raw/master/demo.gif]]
+
+*** 中文分词工具
+
+[[https://github.com/kanglmf/emacs-chinese-word-segmentation][emacs-chinese-word-segmentation]] : 基于 [[https://github.com/yanyiwu/cjieba][cjieba]] 的中文分词工具。实现了以中文词语为单位的移动和编辑。
 
 
 
