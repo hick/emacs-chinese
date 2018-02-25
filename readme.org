@@ -31,7 +31,7 @@ changelog
      - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
      - [[#org-以及-latex-等导出中文-pdf][org 以及 LaTex 等导出中文 pdf]]
    - [[#其他中文相关工具][其他中文相关工具]]
-     - [[#writing-GNU-Emacs-Extensions-中文翻译][Writing GNU Emacs Extensions 中文翻译]]
+     - [[#writing-gnu-emacs-extensions-中文翻译][Writing GNU Emacs Extensions 中文翻译]]
      - [[#安装包镜像安装源中国大陆服务器][安装包镜像/安装源中国大陆服务器]]
      - [[#ace-pinyin][ace-pinyin]]
      - [[#cedict][cedict]]
