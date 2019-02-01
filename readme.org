@@ -1,4 +1,5 @@
 #+OPTIONS: H:3 num:2
+# 目录使用 toc-org 生成, 每次保存自动更新
 
 * Emacs相关中文问题以及解决方案
 
@@ -7,12 +8,11 @@
 changelog
 :
 
+- 2019-02-01 增加中文相关网站和聚集地 emacs-china
 - 2018-02-25 Writing GNU Emacs Extensions 中文翻译
 - 2016-09-09 增加清华和 Emacs-China 的 elpa 镜像
 - 2016-01-01 安装包镜像/安装源中国大陆服务器
 - 2015-12-27 文件编码问题整理
-- 2015-12-25 中文断行(org 导出 html 有空格)等问题
-
 
 ** 目录        :TOC_3_gh:
  - [[#emacs相关中文问题以及解决方案][Emacs相关中文问题以及解决方案]]
@@ -30,6 +30,10 @@ changelog
      - [[#table-中英文对齐等][table 中英文对齐等]]
      - [[#org-导出中文-html-的空格问题][org 导出中文 html 的空格问题]]
      - [[#org-以及-latex-等导出中文-pdf][org 以及 LaTex 等导出中文 pdf]]
+   - [[#中文用户聚集地][中文用户聚集地]]
+     - [[#emacs-爱好者微信群][Emacs 爱好者微信群]]
+     - [[#emacs-china][Emacs-China]]
+     - [[#水木社区-emacs-版][水木社区 Emacs 版]]
    - [[#其他中文相关工具][其他中文相关工具]]
      - [[#writing-gnu-emacs-extensions-中文翻译][Writing GNU Emacs Extensions 中文翻译]]
      - [[#安装包镜像安装源中国大陆服务器][安装包镜像/安装源中国大陆服务器]]
@@ -90,6 +94,19 @@ UTF-8 编码在 MS-Windows 环境下是 「二等公民」, 特别是与命令�
     (set-default 'process-coding-system-alist
       '(("[pP][lL][iI][nN][kK]" gbk-dos . gbk-dos)
 	("[cC][mM][dD][pP][rR][oO][xX][yY]" gbk-dos . gbk-dos))))
+#+END_SRC
+
+
+参考 [[https://github.com/hick/emacs-chinese/issues/4][issue#4]] jacobsun 的分享, 有可能需要如下设置, 否则可能出现乱码, 暂时未获知具体版本等相关信息, hick 个人的 windows 下设置的只有下面说的一行:
+
+#+BEGIN_SRC Emacs lisp
+;; jacobsun 分享
+(when (eq system-type 'windows-nt)
+  (set-next-selection-coding-system 'utf-16-le)
+  (set-selection-coding-system 'utf-16-le)
+  (set-clipboard-coding-system 'utf-16-le))
+;; hick 个人的设置:
+(set-default-coding-systems 'utf-8)
 #+END_SRC
 
 
@@ -252,6 +269,24 @@ Emacs 自带 calc-china.el , 以下为设置中文里的 ‘celestial-stem’ (�
 
 arthur@微信群 分享的 TeX 解决方案, 用 [[http://home.ustc.edu.cn/~zpj/doc/TeX/xetex-tutorial.pdf][XeTeX]] 或者 [[http://www.doc88.com/p-673855969907.html][xetex-tutorial]] .
 
+
+** 中文用户聚集地
+
+*** Emacs 爱好者微信群
+
+分一个主群和一个闲聊群, 截止 2019-02-01 分别 400 多人和 200 多人.
+
+微信加 3715397 注明 Emacs 可以邀请入群.  特别注意主群约定之聊 Emacs 相关话题, 无关话题转闲聊群.
+
+*** Emacs-China
+
+主要由 子龙山人 创建的 ,  [[https://emacs-china.org/][Emacs 讨论社区]] 创建以后比较活跃, 讨论比较有序.
+
+*** 水木社区 Emacs 版
+
+源自水木清华的 telnet BBS 的社区, 目前同时有 [[http://www.newsmth.net/nForum/#!board/Emacs][web 版]] 和 telnet 版
+
+
 ** 其他中文相关工具
 
 
@@ -308,7 +343,7 @@ Get (most likely) Chinese word under the cursor in Emacs
 
 *** chinese-fonts-setup
 
-https://github.com/tumashu/chinese-fonts-setup
+原地址 https://github.com/tumashu/chinese-fonts-setup 已经更新为 https://github.com/tumashu/cnfonts
 
 emacs中文字体配置工具. 可以快速方便的的实现中文字体和英文字体等宽（也就是常说的中英文对齐）
 
@@ -397,8 +432,9 @@ Search Chinese by the first letter of Chinese pinyin.
 
 本文档由 hick 初始整理, 主要是在 Emacs 微信群中 @求其 @arthur @子龙山人 @peng 等讨论中文 org 中 table 中英文混排对齐的时候, 发现有各种做法, 引发整理中文问题的想法.
 
-特别鸣谢以下同学的贡献:
+特别鸣谢:
 
 - [[https://github.com/zklhp][zklhp]] 补充 windows 环境的处理
+- 本文目录使用 [[https://github.com/snosov1/toc-org][toc-org]] 自动生成, 安装好以后每次保存会自动刷新目录
 
 欢迎提议和补充条目.
